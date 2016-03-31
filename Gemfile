@@ -1,3 +1,5 @@
+ruby "2.2.3"
+
 source 'https://rubygems.org'
 
 gem 'rails', '5.0.0.beta3'
@@ -31,6 +33,8 @@ gem 'redis', '~> 3.0'
 # gem 'capistrano-rails', group: :development
 
 gem 'slim-rails'
+
+gem 'rails_12factor', group: :production
 
 group :development do
   gem 'better_errors'
