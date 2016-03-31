@@ -1,9 +1,15 @@
 App.chat = App.cable.subscriptions.create "ChatChannel",
   connected: ->
-    # Called when the subscription is ready for use on the server
+    $('form').addClass('connected').on 'submit', (e) =>
+      e.preventDefault()
+      @perform 'notification', post: $(e.target).serialize()
+      false
 
   disconnected: ->
-    # Called when the subscription has been terminated by the server
+    $('form').removeClass('connected').off 'submit'
 
   received: (data) ->
-    # Called when there's incoming data on the websocket for this channel
+    @message data["post"] if data["post"]
+
+  message: (post)->
+    $('table tbody').append(post);
