@@ -1,0 +1,12 @@
+{
+  "dokku": {
+    "plugins": [
+      "postgres", "redis"
+    ]
+  },
+  "scripts": {
+    "dokku": {
+      "postdeploy": "rails db:migrate"
+    }
+  }
+}

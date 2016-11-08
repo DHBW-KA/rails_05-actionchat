@@ -40,7 +40,7 @@ Rails.application.configure do
 
   # Action Cable endpoint configuration
   # config.action_cable.url = 'wss://example.com/cable'
-  config.action_cable.allowed_request_origins = [ 'http://dhbw.staging.inline.de', "http://dhbw.sprauer.net" ]
+  config.action_cable.allowed_request_origins = [ 'http://rails_actionchat.staging.inline.de' ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true

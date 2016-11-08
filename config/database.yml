@@ -20,6 +20,14 @@ test:
   <<: *default
   database: db/test.sqlite3
 
-production:
-  <<: *default
-  database: db/production.sqlite3
+
+default: &default
+  adapter: postgresql
+  host:     <%= ENV['DB_HOST'] || 'localhost' %>
+  port:     <%= ENV['DB_PORT'] || 5432 %>
+  username: <%= ENV['DB_USER'] || 'postgres' %>
+  password: <%= ENV['DB_PASS'] || 'dev' %>
+  pool: 100
+  timeout: 5000
+  database: <%= ENV['DB_NAME'] || 'rails_actionchat' %>
+
